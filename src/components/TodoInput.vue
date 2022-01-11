@@ -21,8 +21,7 @@ export default({
             // console.log(this.newTodoItem);
             // trim은 string의 앞뒤 공백을 제거
             var value = this.newTodoItem && this.newTodoItem.trim();
-            // 입력받은 텍스트를 로컬 스토리지의 setItem()API를 이용하여 저장
-            // API형식은 키,값 형태이며 저장 기능을 단순하게 하기 위해 키,값 모두 입력받은 텍스트로 지정
+            // this.#emit(하위컴포넌트의 이벤트명, 전달데이터)
             this.$emit('addTodo',value);
             this.clearInput();
             }

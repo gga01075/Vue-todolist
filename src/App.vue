@@ -24,12 +24,15 @@
        },
        data(){
          return{
+           //TodoList컴포넌트에 props로 전달할 data
            todoItems: []
          }
        },
        methods:{
          addTodo(todoItem){
            //로컬 스토리지에 데이터를 추가하는 로직
+           // 입력받은 텍스트를 로컬 스토리지의 setItem()API를 이용하여 저장
+           // API형식은 키,값 형태이며 저장 기능을 단순하게 하기 위해 키,값 모두 입력받은 텍스트로 지정
            localStorage.setItem(todoItem, todoItem);
            this.todoItems.push(todoItem);
          },
@@ -38,7 +41,9 @@
             this.todoItems = [];
          },
         removeTodo(todoItem, index) {
+          //localStorage에서 키에 해당하는 값을 제거
           localStorage.removeItem(todoItem);
+          //splice(배열의 변경을 시작할 인덱스, 배열에서 제거할 요소의 수)
           this.todoItems.splice(index, 1);
         }
        },

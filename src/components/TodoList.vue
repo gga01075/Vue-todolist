@@ -2,7 +2,7 @@
     <div>
         <section>
             <ul>
-               <li v-for="(todoItem,index) in propsdata" class="shadow">
+               <li v-for="(todoItem,index) in propsdata" class="shadow" :key="index">
                    <i class="checkBtn fa fa-check" aria-hidden="true"></i>
                    {{todoItem}}
                    <span class="removeBtn" type="button" @click="removeTodo(todoItem, index)">
